@@ -6,7 +6,7 @@
   <artifactId>test</artifactId>
   <packaging>war</packaging>
   <version>1.0</version>
-  <name>Vaadin Web Application</name>
+  <name>Test Vaadin Web Application</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,9 +20,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.6</source>
+          <target>1.6</target>
         </configuration>
       </plugin>
 
@@ -85,6 +86,11 @@
         <artifactId>maven-jetty-plugin</artifactId>
         <version>6.1.24</version>
         <configuration>
+            <connectors>
+                <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                    <port>9090</port>
+                </connector>
+            </connectors>
           <stopPort>9966</stopPort>
           <stopKey>test</stopKey>
           <!-- Redeploy every x seconds if changes are detected, 0 for no automatic redeployment -->
