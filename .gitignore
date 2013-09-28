@@ -1,2 +1,4 @@
 #skip build directory
 /target
+#skip idea config files
+/.idea
