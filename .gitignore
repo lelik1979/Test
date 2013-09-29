@@ -1,6 +1,9 @@
 #skip build directory
-/target
+target
 
 #skip idea config files
-/.idea
-/test.iml
+.idea
+test.iml
+
+#ignore log file
+app.log
